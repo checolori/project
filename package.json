@@ -4,9 +4,8 @@
   "description": "",
   "main": "target/index.js",
   "scripts": {
-    
     "start": "nodemon",
-    "postinstall": "tsc -p ."
+    "postinstall": "tsc -p .",
     "compile": "tsc -w"
   },
   "keywords": [],
