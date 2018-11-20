@@ -1,5 +1,5 @@
 // src/pages/controller.ts
-import { JsonController, Get, Param, Put, Body } from 'routing-controllers'
+import { JsonController, Get, Param, Put, Body, Post, HttpCode } from 'routing-controllers'
 import pagesById, { Page } from './data'
 type PageList = { pages: Page[] }
 @JsonController()
@@ -18,4 +18,14 @@ updatePage(
     console.log(`Incoming PUT body param:`, body)
     return pagesById[id]
 }
+
+@Post('/pages')
+@HttpCode(201)
+createPage(
+    @Body() body: Page
+): Page {
+    console.log(`Incoming POST body param:`, body)
+    return body
+}
+
 }
